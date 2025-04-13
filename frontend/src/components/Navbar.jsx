@@ -17,13 +17,9 @@ const Navbar = () => {
     }
 
   return (
-    <div className='w-full fixed top-0 left-0 right-0 flex items-center justify-between py-2 font-medium bg-orange-800 text-white px-6' >
+    <div className='w-full fixed top-0 left-0 right-0 flex items-center justify-between py-2 font-medium bg-orange-400 text-white px-6' >
       
-      <Link to='/' className='text-2xl font-bold text-black'>
-  Nandi Agrotech
-</Link>
-
-
+      <Link to='/' className='text-2xl font-bold text-white'>Nandi Agrotech</Link>
       <ul className='hidden sm:flex gap-5 text-sm'>
         
         <NavLink to='/' className='flex flex-col items-center gap-1'>
@@ -53,10 +49,9 @@ const Navbar = () => {
                 {/* Dropdown Menu */}
                 {token && 
                 <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-orange-700 text-white rounded'>
-                        <p className='cursor-pointer hover:text-black'>My Profile</p>
-                        <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
-                        <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-orange-400 text-white rounded'>
+                        <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-white'>Orders</p>
+                        <p onClick={logout} className='cursor-pointer hover:text-white'>Logout</p>
                     </div>
                 </div>}
             </div> 

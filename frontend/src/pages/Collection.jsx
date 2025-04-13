@@ -87,36 +87,36 @@ const Collection = () => {
       
       {/* Filter Options */}
       <div className='min-w-60'>
-        <p onClick={()=>setShowFilter(!showFilter)} className='my-8 text-xl flex items-center cursor-pointer gap-2'>FILTERS
+        <p onClick={()=>setShowFilter(!showFilter)} className='my-8 text-xl text-black flex items-center cursor-pointer gap-2'>FILTERS
           <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
         </p>
         {/* Category Filter */}
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' :'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
+          <p className='mb-3 text-sm font-medium text-black'>CATEGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/>Kissan
+              <input className='w-3 text-black' type="checkbox" value={'Men'} onChange={toggleCategory}/>Kissan craft
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/> Rally
+              <input className='w-3 text-black' type="checkbox" value={'Women'} onChange={toggleCategory}/> Really
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/> Other
+              <input className='w-3 text-black' type="checkbox" value={'Kids'} onChange={toggleCategory}/> Other
             </p>
           </div>
         </div>
         {/* SubCategory Filter */}
         <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' :'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
+          <p className='mb-3 text-sm font-medium text-black'>TYPE</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/> Machine
+              <input className='w-3 text-black' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/> Machine
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Parts
+              <input className='w-3 text-black' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Parts
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/> Others
+              <input className='w-3 text-black' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/> Others
             </p>
           </div>
         </div>
