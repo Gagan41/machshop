@@ -49,22 +49,15 @@ const Product = () => {
 
         {/* -------- Product Info ---------- */}
         <div className='flex-1'>
-          <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
+          <h1 className='font-medium text-2xl text-black mt-2'>{productData.name}</h1>
           <div className=' flex items-center gap-1 mt-2'>
-              <img src={assets.star_icon} alt="" className="w-3 5" />
-              <img src={assets.star_icon} alt="" className="w-3 5" />
-              <img src={assets.star_icon} alt="" className="w-3 5" />
-              <img src={assets.star_icon} alt="" className="w-3 5" />
-              <img src={assets.star_dull_icon} alt="" className="w-3 5" />
-              <p className='pl-2'>(122)</p>
           </div>
-          <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
-          <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
+          <p className='mt-5 text-black md:w-4/5'>{productData.description}</p>
           <div className='flex flex-col gap-4 my-8'>
-              <p>Select Size</p>
+              <p className='text-black'>Select Size</p>
               <div className='flex gap-2'>
                 {productData.sizes.map((item,index)=>(
-                  <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ? 'border-orange-500' : ''}`} key={index}>{item}</button>
+                  <button onClick={()=>setSize(item)} className={`border py-2 px-4 text-black bg-gray-100 ${item === size ? 'border-orange-500' : ''}`} key={index}>{item}</button>
                 ))}
               </div>
           </div>
@@ -78,9 +71,9 @@ const Product = () => {
       {/* ---------- Description & Review Section ------------- */}
       <div className='mt-20'>
         <div className='flex'>
-          <b className='border px-5 py-3 text-sm'>Description</b>
+          <b className='border px-5 py-3 text-black text-sm'>Description</b>
         </div>
-        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-black'>
           <p>An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
           <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
         </div>
