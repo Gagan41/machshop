@@ -26,10 +26,10 @@ const NewsletterBox = () => {
   return (
     <div className="text-center">
       <p className="text-2xl font-medium text-gray-800">
-        Subscribe now &amp; get 20% off
+        Subscribe now &amp; get 10% off
       </p>
       <p className="text-black mt-3">
-        Subscribe now and enjoy an exclusive 20% off on your first purchase!
+        Subscribe now and enjoy an exclusive 10% off on your first purchase!
       </p>
       <form
         onSubmit={onSubmitHandler}
