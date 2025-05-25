@@ -9,6 +9,11 @@ const MAILER_PORT = 5001; // Dedicated port for Nodemailer service
 mailerApp.use(express.json());
 mailerApp.use(cors());
 
+// Root route handler
+mailerApp.get("/", (req, res) => {
+  res.json({ message: "Mailer server is running" });
+});
+
 // Subscription Endpoint
 mailerApp.post("/api/subscribe", async (req, res) => {
   const { email } = req.body;
