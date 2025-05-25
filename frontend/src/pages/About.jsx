@@ -34,7 +34,7 @@ By providing advanced tools and machinery, we aim to support sustainable agricul
           </div>
           <div className='border border-black px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
             <b className='text-black'>Convenience:</b>
-            <p className=' text-black'>With our user-friendly interface and hassle-free ordering process, shopping has never been easier.</p>
+            <p className=' text-black'>With our user-friendly interface and hassle-free ordering process, shopping has been easier.</p>
           </div>
           <div className='border border-black px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
             <b className='text-black'>Exceptional Customer Service:</b>

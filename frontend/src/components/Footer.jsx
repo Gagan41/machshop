@@ -7,10 +7,13 @@ const Footer = () => {
       <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
 
         <div>
-        <p className=' text-lg font-bold text-black py-2'>Nandi Agrotech</p>
+        <p className=' text-lg font-bold text-black py-2'>Nandi Agrotech Turuvekere</p>
 
             <p className='w-full md:w-2/3 text-black'>
-            At Nandi Agrotech, we provide high-quality and reliable agricultural equipment to enhance productivity and efficiency. With cutting-edge machinery and modern solutions, we empower farmers with the best tools for success. Built on trust and innovation, we are your farming partner, ensuring growth at every step. Choose Nandi Agrotech – where technology meets agriculture for a better tomorrow! 🌾💪
+            At Nandi Agrotech, we offer strong and reliable farming equipment to help increase productivity and save time.
+Our advanced machines and modern technology help farmers do their work more easily and effectively.
+We believe in trust and innovation, and we work as a partner with every farmer to support their growth.
+Choose Nandi Agrotech – where modern technology supports farming for a better future! 🌾💪
             </p>
         </div>
 
