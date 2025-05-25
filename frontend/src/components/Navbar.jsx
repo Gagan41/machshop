@@ -57,48 +57,57 @@ const Navbar = () => {
 
       {/* Sidebar menu for small screens */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-orange-900 transition-all ${
-          visible ? "w-full" : "w-0"
+        className={`fixed top-0 right-0 h-screen w-[250px] bg-orange-900 transition-all duration-300 ease-in-out z-50 ${
+          visible ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col text-white">
+        <div className="flex flex-col text-white h-full">
           <div
             onClick={() => setVisible(false)}
-            className="flex items-center gap-4 p-3 cursor-pointer"
+            className="flex items-center gap-4 p-4 cursor-pointer border-b"
           >
             <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="" />
             <p>Back</p>
           </div>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border"
-            to="/"
-          >
-            HOME
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border"
-            to="/collection"
-          >
-            COLLECTION
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border"
-            to="/about"
-          >
-            ABOUT
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border"
-            to="/contact"
-          >
-            CONTACT
-          </NavLink>
+          <div className="flex flex-col">
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-3 pl-6 border-b hover:bg-orange-800 transition-colors"
+              to="/"
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-3 pl-6 border-b hover:bg-orange-800 transition-colors"
+              to="/collection"
+            >
+              COLLECTION
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-3 pl-6 border-b hover:bg-orange-800 transition-colors"
+              to="/about"
+            >
+              ABOUT
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-3 pl-6 border-b hover:bg-orange-800 transition-colors"
+              to="/contact"
+            >
+              CONTACT
+            </NavLink>
+          </div>
         </div>
       </div>
+      {/* Overlay */}
+      {visible && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden"
+          onClick={() => setVisible(false)}
+        />
+      )}
     </div>
   );
 };

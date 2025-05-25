@@ -1,26 +1,26 @@
-import express from 'express';
-import cors from 'cors';
-import nodemailer from 'nodemailer';
-import 'dotenv/config';
+import express from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
+import "dotenv/config";
 
 const mailerApp = express();
-const MAILER_PORT = 5000;  // Dedicated port for Nodemailer service
+const MAILER_PORT = 5001; // Dedicated port for Nodemailer service
 
 mailerApp.use(express.json());
 mailerApp.use(cors());
 
 // Subscription Endpoint
-mailerApp.post('/api/subscribe', async (req, res) => {
+mailerApp.post("/api/subscribe", async (req, res) => {
   const { email } = req.body;
-  if (!email) return res.status(400).json({ error: 'Email is required' });
+  if (!email) return res.status(400).json({ error: "Email is required" });
 
   // Create the Nodemailer transporter using Gmail's configuration
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
       user: process.env.EMAIL_USER, // Your Gmail address
-      pass: process.env.EMAIL_PASS  // Your App Password
-    }
+      pass: process.env.EMAIL_PASS, // Your App Password
+    },
   });
 
   // Define the email options
@@ -29,16 +29,16 @@ mailerApp.post('/api/subscribe', async (req, res) => {
     to: email,
     subject: "Welcome to Our Newsletter!",
     text: "Thank you for subscribing to our newsletter. Enjoy your exclusive 20% off on your first purchase and stay tuned for more exclusive offers!",
-    html: "<p>Thank you for subscribing to our newsletter. Enjoy your exclusive <strong>20% off</strong> on your first purchase and stay tuned for more exclusive offers!</p>"
+    html: "<p>Thank you for subscribing to our newsletter. Enjoy your exclusive <strong>20% off</strong> on your first purchase and stay tuned for more exclusive offers!</p>",
   };
 
   try {
     let info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
-    res.status(200).json({ message: 'Subscription successful, email sent!' });
+    res.status(200).json({ message: "Subscription successful, email sent!" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to send email' });
+    res.status(500).json({ error: "Failed to send email" });
   }
 });
 
