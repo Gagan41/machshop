@@ -11,6 +11,50 @@ const Collection = () => {
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
 
+  useEffect(() => {
+    // Function to handle custom translations
+    const handleCustomTranslation = () => {
+      const elements = document.querySelectorAll(
+        "[data-google-translate-custom]"
+      );
+      elements.forEach((element) => {
+        const customTranslation = element.getAttribute(
+          "data-google-translate-custom"
+        );
+        if (document.documentElement.lang === "kn" && customTranslation) {
+          // Store original text if not already stored
+          if (!element.hasAttribute("data-original-text")) {
+            element.setAttribute("data-original-text", element.textContent);
+          }
+          element.textContent = customTranslation;
+        } else {
+          // Restore original text if available
+          const originalText = element.getAttribute("data-original-text");
+          if (originalText) {
+            element.textContent = originalText;
+          }
+        }
+      });
+    };
+
+    // Initial check
+    handleCustomTranslation();
+
+    // Create an observer to watch for language changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === "lang") {
+          handleCustomTranslation();
+        }
+      });
+    });
+
+    // Start observing the document with the configured parameters
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
       setCategory((prev) => prev.filter((item) => item !== e.target.value));
@@ -94,9 +138,11 @@ const Collection = () => {
                 value={"Really"}
                 onChange={toggleCategory}
               />
-              Really 
+              <span class="notranslate" data-google-translate-custom="ರಿಯಲಿ">
+                Really
+              </span>
             </p>
-             <p className="flex gap-2">
+            <p className="flex gap-2">
               <input
                 className="w-3 text-black"
                 type="checkbox"

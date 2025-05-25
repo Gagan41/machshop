@@ -11,6 +11,13 @@ const BestSeller = () => {
     "TKtmwRVeKaY",
     "KSdDifHfMwc",
     "C_6g2XZvDlQ",
+    "EMSfNe8tLAY",
+    "_N_yZWkEE4k",
+    "M7aB9ilJ1yA",
+    "5napGIQv2Zo",
+    "kMbmjmw3PHM",
+    "HY_ReoFdb1o",
+    "m409Wg7jPRM",
   ];
 
   return (
