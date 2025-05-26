@@ -30,7 +30,7 @@ mailerApp.post("/api/subscribe", async (req, res) => {
 
   // Define the email options
   let mailOptions = {
-    from: `"Shashi Adda" <${process.env.EMAIL_USER}>`,
+    from: `"Nandi Agrotech" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: "Welcome to Our Newsletter!",
     text: "Thank you for subscribing to our newsletter. Enjoy your exclusive 20% off on your first purchase and stay tuned for more exclusive offers!",

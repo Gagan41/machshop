@@ -11,15 +11,15 @@ const Contact = () => {
       </div>
 
       <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-[480px]' src={assets.contact_img} alt="Contact" />
+        <img className='w-full md:max-w-[480px]' src={assets.contact} alt="Contact" />
         <div className='flex flex-col justify-center items-start gap-6'>
           <p className='font-semibold text-xl text-black'>Our Store</p>
           <p className='text-black'>
             Mayasandra Road <br /> Turuvekere, Karnataka, 572227
           </p>
           <p className='text-black'>
-            Tel: (+91) 6366542135, (+91) 9448536281 <br />
-            Email: admin@nandiagrotech.com
+            Tel: Kiran Kumar (+91) 6366542135, G R Rangegowda(+91) 9448536281 , Chetan (+91) 990050585<br />
+            Email: nandiagrotech363@gmail.com
           </p>
           <p className='font-semibold text-xl text-black'>Nandi Agrotech</p>
           <p className='text-black'>Learn more about our terms and conditions.</p>

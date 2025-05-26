@@ -39,7 +39,7 @@ const PlaceOrder = () => {
     const fullMessage = `${customerDetails}*Order Items:*\n${itemDetails}`;
 
     const encodedMessage = encodeURIComponent(fullMessage);
-    const phoneNumber = "919483600376";
+    const phoneNumber = "916366542135";
 
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
@@ -110,7 +110,7 @@ const PlaceOrder = () => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t"
+      className="flex flex-col sm:flex-row justify-between gap-4 pt-20 sm:pt-24 min-h-[80vh] border-t"
     >
       {/* Left Side */}
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">

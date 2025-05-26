@@ -12,7 +12,7 @@ const About = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-          <img className='w-full md:max-w-[450px]'src={assets.contact_img} alt="" />
+          <img className='w-full md:max-w-[450px]'src={assets.about} alt="" />
           <div className='flex flex-col justify-center gap-6 md:w-2/4 text-black'>
               <p>Nandi Agrotech is your one-stop destination for high-quality agricultural equipment designed to enhance productivity and efficiency. We offer a wide range of farming tools, including tractors, plows, seeders, irrigation systems, and more, ensuring that farmers get the best solutions for their needs. Our products are built for durability and performance, helping you cultivate success with ease.</p>
               <p>At Nandi Agrotech, we believe in empowering farmers with modern technology at affordable prices. Whether you need advanced machinery or essential farming tools, our collection is carefully selected to support every stage of cultivation. With great deals and reliable customer service, we are committed to making farming easier, more efficient, and more profitable for you! 🚜🌿</p>
