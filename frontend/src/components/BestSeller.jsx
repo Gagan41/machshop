@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Title from "./Title";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 const BestSeller = () => {
-  // Array of YouTube video IDs
-  // To add new videos:
-  // 1. Get the video ID from the YouTube URL (e.g., from https://youtu.be/abc123xyz, the ID is 'abc123xyz')
-  // 2. Add the ID to this array
-  const youtubeVideos = [
-    "pt8VpBKEBy4",
-    "TKtmwRVeKaY",
-    "KSdDifHfMwc",
-    "C_6g2XZvDlQ",
-    "EMSfNe8tLAY",
-    "_N_yZWkEE4k",
-    "M7aB9ilJ1yA",
-    "5napGIQv2Zo",
-    "kMbmjmw3PHM",
-    "HY_ReoFdb1o",
-    "m409Wg7jPRM",
-  ];
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch(`${backendUrl}/api/videos/all`);
+        const data = await response.json();
+        if (data.success) {
+          setVideos(data.videos);
+        }
+      } catch (error) {
+        console.error("Failed to fetch videos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="my-10">
@@ -33,16 +42,23 @@ const BestSeller = () => {
       {/* Horizontally scrollable video container */}
       <div className="overflow-x-auto pb-4">
         <div className="flex gap-6 min-w-max px-4">
-          {youtubeVideos.map((videoId, index) => (
-            <div key={index} className="w-[400px] sm:w-[500px] flex-shrink-0">
+          {videos.map((video) => (
+            <div
+              key={video._id}
+              className="w-[400px] sm:w-[500px] flex-shrink-0"
+            >
               <iframe
                 className="w-full aspect-video rounded-lg shadow-lg"
-                src={`https://www.youtube.com/embed/${videoId}`}
-                title={`Video ${index + 1}`}
+                src={`https://www.youtube.com/embed/${video.videoId}`}
+                title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              <div className="mt-2">
+                <h3 className="font-semibold text-lg text-black">{video.title}</h3>
+                <p className="text-gray-600 text-sm">{video.description}</p>
+              </div>
             </div>
           ))}
         </div>
